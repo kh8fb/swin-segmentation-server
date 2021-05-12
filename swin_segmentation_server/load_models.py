@@ -6,7 +6,7 @@ from mmdet.apis import init_detector
 
 def load_swin_model(model_path, cfg_path):
     """
-    Load the pretrained TensorMask model states and prepare the model for image segmentation.
+    Load the pretrained Swin Transformer model states and prepare the model for image segmentation.
 
     Paramters
     ---------
@@ -42,7 +42,7 @@ def load_models(swin_path, cfg_path):
         Current keys are 'model_name', 'model'.
     """
     if swin_path is not None:
-        swin_model = load_tensormask_model(str(swin_path), str(cfg_path))
+        swin_model = load_swin_model(str(swin_path), str(cfg_path))
         return {"model_name": "swin", "model": swin_model}
     # add additional models here
     else:
