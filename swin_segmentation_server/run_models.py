@@ -54,7 +54,8 @@ def get_pred_masks(result, threshold):
         for j in range(index):
             tensor_list.append(torch.tensor(result[1][i][j]))
 
-    return torch.stack(tensor_list, dim=0)
+    pred_masks = torch.stack(tensor_list, dim=0)
+    return pred_masks
 
 
 def run_models(model_name, model, img, threshold):
