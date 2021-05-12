@@ -26,21 +26,22 @@ This next step depends on which cuda and PyTorch version you have installed.  Of
 
     pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html
 
-    Replace `{cu_version}` and `{torch_version}` in the url to your desired one. For example, to install the latest `mmcv-full` with `CUDA 11` and `PyTorch 1.8.1`, use the following command:
+Replace `{cu_version}` and `{torch_version}` in the url to your desired one. For example, to install the latest `mmcv-full` with `CUDA 11` and `PyTorch 1.8.1`, use the following command:
 
     pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.8.1/index.html
 
-    See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
+See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
 
 #### Installing Swin
 
 To install the Swin Models, `pip install` opencv and clone the [Swin for Object Detection Github Repo](https://github.com/SwinTransformer/Swin-Transformer-Object-Detection)
 
-   pip install opencv-python
-   git clone https://github.com/SwinTransformer/Swin-Transformer-Object-Detection.git 
-   cd Swin-Transformer-Object-Detection
-   pip install -r requirements/build.txt
-   pip install -v -e .
+   	pip install opencv-python
+   	git clone https://github.com/SwinTransformer/Swin-Transformer-Object-Detection.git 
+   	cd Swin-Transformer-Object-Detection
+   	pip install -r requirements/build.txt
+   	pip install -v -e .
+
 
 #### Installing the swin-segmentation-server/
 
@@ -60,7 +61,7 @@ Activate the server directly from the command line with
 
 This command starts the server and load the model so that it's ready to go when called upon.
 
-The finetuned Swin Transformer object detection model can be downloaded from this [Google drive folder]()
+The finetuned Swin Transformer object detection model can be downloaded from this [Google drive folder](https://drive.google.com/drive/folders/1s4xvls62Z8uPAXW2jUu96Q2w1OinyEy6?usp=sharing)
 
 You can provide additional arguments such as the hostname, port, and a cuda flag.
 
