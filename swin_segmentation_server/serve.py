@@ -87,7 +87,7 @@ def run_model():
     "--threshold",
     "-t",
     required=False,
-    help="Minimum threshold to include prediction masks in the final output. Value between 0 and 1."
+    help="Minimum threshold to include prediction masks in the final output. Value between 0 and 1.",
     default=0.5,
 )
 def serve(
