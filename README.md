@@ -26,11 +26,11 @@ This next step depends on which cuda and PyTorch version you have installed.  Of
 
     pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html
 
-    Replace `{cu_version}` and `{torch_version}` in the url to your desired one. For example, to install the latest `mmcv-full` with `CUDA 11` and `PyTorch 1.8.1`, use the following command:
+Replace `{cu_version}` and `{torch_version}` in the url to your desired one. For example, to install the latest `mmcv-full` with `CUDA 11` and `PyTorch 1.8.1`, use the following command:
 
     pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu110/torch1.8.1/index.html
 
-    See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
+See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different versions of MMCV compatible to different PyTorch and CUDA versions.
 
 #### Installing Swin
 
