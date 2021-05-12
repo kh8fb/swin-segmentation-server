@@ -36,11 +36,12 @@ See [here](https://github.com/open-mmlab/mmcv#install-with-pip) for different ve
 
 To install the Swin Models, `pip install` opencv and clone the [Swin for Object Detection Github Repo](https://github.com/SwinTransformer/Swin-Transformer-Object-Detection)
 
-   pip install opencv-python
-   git clone https://github.com/SwinTransformer/Swin-Transformer-Object-Detection.git 
-   cd Swin-Transformer-Object-Detection
-   pip install -r requirements/build.txt
-   pip install -v -e .
+   	pip install opencv-python
+   	git clone https://github.com/SwinTransformer/Swin-Transformer-Object-Detection.git 
+   	cd Swin-Transformer-Object-Detection
+   	pip install -r requirements/build.txt
+   	pip install -v -e .
+
 
 #### Installing the swin-segmentation-server/
 
