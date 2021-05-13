@@ -116,13 +116,13 @@ Once the server's are running, they all have the same input steps, however they 
 #### Getting Output
 
 ##### prepare_input.py
-Each model accepts JSON input and thus requires some preparation before an input Image is ready for the model.  This is done with *that repo's* prepare_input.py file.  For the classification, the input looks like
+Each model accepts JSON input and thus requires some preparation before an input Image is ready for the model.  This is done with *that repo's* prepare_input.py file.  For the *classification models*, the input looks like
 
      python prepare_input.py /path/to/image.jpeg airplane input_json_file.json
 
 Where the `classification` is one of ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, or ‘truck' (The classifications from the CIFAR-10 dataset the model was trained upon).  Your input will be stored in `input_file.json`.
 
-For the image segmentation models, no classification needs to provided so you just need to run 
+For the *image segmentation models*, no classification needs to provided so you just need to run 
 
     python prepare_input.py /path/to/image.jpg input_json_file.json
 
