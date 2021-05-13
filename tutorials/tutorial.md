@@ -1,9 +1,9 @@
 # Image Attributions: The ultimate guide
 #### Table of contents
 1. [Installation](#1-installation)
-2. [Running the Server](#running-the-server)
-3. [Prepping the ipynotebook](#prepping-the-ipynotebook)
-4. [Citations](#citations)
+2. [Running the Server](#2-running-the-server)
+3. [Prepping the ipynotebook](#3-prepping-the-ipynotebook)
+4. [Citations](#4-citations)
 
 #### Model Paper Links
 1. [Sample-Efficient Neural Architecture Search by Learning Action Space (LaNet)](https://arxiv.org/abs/1906.06832)
