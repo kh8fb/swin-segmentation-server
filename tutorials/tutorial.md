@@ -52,6 +52,7 @@ Load the module for `gcccuda` and set the `$CUDA_HOME` variable
 Finally,
 
 	conda install pytorch torchvision cudatoolkit=11.1 -c pytorch -c nvidia
+	pip install opencv-python
 
 Now that the CUDA and Pytorch has been correctly set up, follow either of the following sections depending on if you're installing TensorMask or the SwinTransformer 
     
@@ -106,11 +107,11 @@ Once the server's are running, they all have the same input steps, however they 
      intgrads-images -bp /path/to/bit_model.pth -h 0.0.0.0 --cuda -p 8008
 #### TensorMask
 
-      tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/tensormask-segmentation-server/configs/tensormask_R_50_FPN_6x_config.yaml -h 0.0.0.0 -p 8008
+      tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/detectron2/projects/TensorMask/configs/tensormask_R_50_FPN_6x.yaml -h 0.0.0.0 -p 8008
 
 #### Swin Transformer
 
-      swin-server -sp /path/to/swin_model.pth -cp /path/to/swin-segmentation-server/configs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
+      swin-server -sp /path/to/swin_model.pth -cp /path/to/Swin-Transformer-Object-Detection/configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
 
 #### Getting Output
 
@@ -186,6 +187,3 @@ Mukund Sundararajan, Ankur Taly, and Qiqi Yan.
 "Sample-Efficient Neural Architecture Search by Learning Action Space for Monte Carlo Tree Search".
 Linnan Wang, Saining Xie, Teng Lim, Rodrigo Fonseca, and Yuandong Tian.
 (IEEE Transactions on Pattern Analysis and Machine Intelligence, 2021)
-
-
-
