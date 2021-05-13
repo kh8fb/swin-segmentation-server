@@ -107,11 +107,11 @@ Once the server's are running, they all have the same input steps, however they 
      intgrads-images -bp /path/to/bit_model.pth -h 0.0.0.0 --cuda -p 8008
 #### TensorMask
 
-      tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/detectron2/projects/TensorMask/configs/tensormask_R_50_FPN_6x.yaml -h 0.0.0.0 -p 8008
+      tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/tensormask-segmentation-server/configs/tensormask_R_50_FPN_6x.yaml -h 0.0.0.0 -p 8008
 
 #### Swin Transformer
 
-      swin-server -sp /path/to/swin_model.pth -cp /path/to/Swin-Transformer-Object-Detection/configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
+      swin-server -sp /path/to/swin_model.pth -cp /path/to/swin-segmentation-server/configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
 
 #### Getting Output
 
