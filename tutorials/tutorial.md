@@ -94,37 +94,50 @@ Finally, install the swin-transformer-server repo and you're all set
 	 cd swin-segmentation-server
 	 pip install -e .
 
+#### Downloading the models
+Use the following gdown commands to download the models from the Google drive links [here](https://drive.google.com/drive/u/0/folders/1KtuVv2GPtbcuy9fifuCXySuqQhcPc-nO) and [here](https://drive.google.com/drive/folders/1s4xvls62Z8uPAXW2jUu96Q2w1OinyEy6?usp=sharing)
+
+    	gdown https://drive.google.com/uc?id=1x2oBzrPePxHyP6yCzUC4JEfDXV0mcbd7 -O LaNet_Trained_model.pth
+
+	gdown https://drive.google.com/uc?id=1WUiOdjR3vEIXGTiSviGqTLhQHyyhzYtD -O BiT_model.pth
+
+	gdown https://drive.google.com/uc?id=1MXVV-wYtlJhQbKVTJZb2TpGNJLH1kCvD -O tensormask_model.pkl
+
+	gdown https://drive.google.com/uc?id=1MXVV-wYtlJhQbKVTJZb2TpGNJLH1kCvD -O Swin_transformer.pth
+
 
 # 2 Running the server
 First, make sure you've downloaded the model links for BiT and LaNet from [this Google Drive link](https://drive.google.com/drive/u/0/folders/1KtuVv2GPtbcuy9fifuCXySuqQhcPc-nO) and the image segmentation model links from [here](https://drive.google.com/drive/folders/1s4xvls62Z8uPAXW2jUu96Q2w1OinyEy6?usp=sharing)
 Once the server's are running, they all have the same input steps, however they all have different command line arguments to get them started.  Each server should be run on host 0.0.0.0 so that you can access it from another shell window.
+
+
 #### LaNet
 
-     intgrads-images -lb /path/to/lanet_model.pth -h 0.0.0.0 -p 8008 --cuda
+     (image-attributions) $ intgrads-images -lp /path/to/lanet_model.pth -h 0.0.0.0 -p 8008 --cuda
 
 #### BiT
 
-     intgrads-images -bp /path/to/bit_model.pth -h 0.0.0.0 --cuda -p 8008
+     (image-attributions) $ intgrads-images -bp /path/to/bit_model.pth -h 0.0.0.0 --cuda -p 8008
 #### TensorMask
 
-      tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/tensormask-segmentation-server/configs/tensormask_R_50_FPN_6x.yaml -h 0.0.0.0 -p 8008
+      (image-segmentation-server) $ tensormask-server -tp /path/to/tensormask_model.pkl -cp /path/to/tensormask-segmentation-server/configs/tensormask_R_50_FPN_6x.yaml -h 0.0.0.0 -p 8008
 
 #### Swin Transformer
 
-      swin-server -sp /path/to/swin_model.pth -cp /path/to/swin-segmentation-server/configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
+      (image-segmentation-server) $ swin-server -sp /path/to/swin_model.pth -cp /path/to/swin-segmentation-server/configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py -h 0.0.0.0 -p 8008
 
 #### Getting Output
 
 ##### prepare_input.py
 Each model accepts JSON input and thus requires some preparation before an input Image is ready for the model.  This is done with *that repo's* prepare_input.py file.  For the *classification models*, the input looks like
 
-     python prepare_input.py /path/to/image.jpeg airplane input_json_file.json
+     (image-attributions) $ python prepare_input.py /path/to/image.jpeg airplane input_json_file.json
 
 Where the `classification` is one of ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, or ‘truck' (The classifications from the CIFAR-10 dataset the model was trained upon).  Your input will be stored in `input_file.json`.
 
 For the *image segmentation models*, no classification needs to provided so you just need to run 
 
-    python prepare_input.py /path/to/image.jpg input_json_file.json
+    (image-segmentation-server) $ python prepare_input.py /path/to/image.jpg input_json_file.json
 
 ##### Querying the server
 Get the host's IP address using the command
@@ -151,8 +164,8 @@ The attributions are stored in a dictionary with the keys: "integrated_grads", "
 
 Create a kernel from your `image-attributions` conda	environment by installing ipykernel and setting up 
 
-       conda install -c anaconda ipykernel
-       python -m ipykernel install --user --name=image-attributions
+       (image-attributions) $ conda install -c anaconda ipykernel
+       (image-attributions) $ python -m ipykernel install --user --name=image-attributions
 
 Now you can run the `example_attributions.ipynb`.  This assumes that you've stored attributions in `output_attributions.gzip` and the image segmentation prediction masks in `pred_masks.gzip`.
 
