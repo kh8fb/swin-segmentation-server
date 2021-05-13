@@ -80,7 +80,7 @@ def run_models(model_name, model, img, threshold):
             "pred_masks": torch.tensor(num_segmentations,height,width)
     """
     if model_name == "swin":
-        result = run_swin(img, device)
+        result = run_swin(img, model)
 
         pred_masks = get_pred_masks(result, threshold)
         preds_dict = {"pred_masks": pred_masks}
