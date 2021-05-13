@@ -22,9 +22,9 @@ First, create an Anaconda environment:
 Next, activate the environment, and `git clone` the [intermediate-gradients repo](https://github.com/kh8fb/intermediate-gradients).
 
      conda activate image-attributions
-      git clone https://github.com/kh8fb/intermediate-gradients.git
-       cd intermediate-gradients
-        pip install -e .
+     git clone https://github.com/kh8fb/intermediate-gradients.git
+     cd intermediate-gradients
+     pip install -e .
 
 Finally,  `git clone` the [int-gradients-image-server repo](https://github.com/kh8fb/int-gradients-image-server).  `cd` into this project's directory and install the requirements with `pip`
 
@@ -120,7 +120,7 @@ Each model accepts JSON input and thus requires some preparation before an input
 
      python prepare_input.py /path/to/image.jpeg airplane input_json_file.json
 
-Where the `classification` is one of ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, or ‘truck'.  Your input will be stored in `input_file.json`.
+Where the `classification` is one of ‘airplane’, ‘automobile’, ‘bird’, ‘cat’, ‘deer’, ‘dog’, ‘frog’, ‘horse’, ‘ship’, or ‘truck' (The classifications from the CIFAR-10 dataset the model was trained upon).  Your input will be stored in `input_file.json`.
 
 For the image segmentation models, no classification needs to provided so you just need to run 
 
