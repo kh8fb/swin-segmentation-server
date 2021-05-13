@@ -1,4 +1,4 @@
-# tensormask-segmentation-server
+# swin-segmentation-server
 A cli-based server for obtaining image segmentation prediction masks from input images using `curl` requests.  This server utilizes the [Swin Transformer](https://arxiv.org/pdf/2103.14030.pdf) state-of-the-art segmentation model.
 
 ### Installation
