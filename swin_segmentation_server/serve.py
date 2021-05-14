@@ -102,6 +102,8 @@ def serve(
     if not (0 < float(threshold) < 1):
         raise ValueError("Threshold must be between 0 and 1")
 
+    THRESHOLD = float(threshold)
+
     # Swin Transformer will always load inputs on cuda devices
     try:
         MODEL_DICT = load_models(swin_path, configuration_path)
